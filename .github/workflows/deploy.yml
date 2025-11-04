@@ -1,1 +1,29 @@
+name: MongoDB Cluster CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build MongoDB cluster containers
+        run: |
+          docker compose build
+
+      - name: Run MongoDB cluster
+        run: |
+          docker compose up -d
+
+      - name: Verify MongoDB cluster
+        run: |
+          docker ps
 
