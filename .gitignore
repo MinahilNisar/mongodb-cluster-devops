@@ -1,0 +1,44 @@
+# MongoDB Sharded Cluster - DevOps Project
+
+# Ignore MongoDB data directories
+config1/
+config2/
+config3/
+shard1a/
+shard1b/
+shard1c/
+shard2a/
+shard2b/
+shard2c/
+router/
+data/
+db/
+dump/
+
+# Ignore Docker data and temp files
+docker-data/
+volumes/
+*.log
+*.pid
+*.tmp
+*.sock
+
+# Environment files
+.env
+.env.*
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Node or build tools (if added later)
+node_modules/
+dist/
+build/
+
+# Archives or backup files
+*.tar
+*.zip
+*.bak
